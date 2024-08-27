@@ -5,7 +5,6 @@ import { useClickAway } from '@uidotdev/usehooks';
 
 export default function Steps() {
   const table = useGLTF('/textures/modern_coffee_table_01_2k/modern_coffee_table_01_2k.gltf');
-  const tree = useGLTF('/textures/island_tree_01_2k/island_tree_01_2k.gltf');
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
   const popupRef = useRef(null);
@@ -67,11 +66,6 @@ export default function Steps() {
           </Html>
         </mesh>
       </RigidBody>
-
-      {/* Pohon */}
-      {/* <RigidBody type="fixed" position={[20, -1, 13]}>
-        <primitive object={tree.scene} scale={5} rotation={[0, Math.PI / 2, 0]} />
-      </RigidBody> */}
 
       {/* Popup ketika di-click */}
       {clicked && (
