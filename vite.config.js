@@ -19,6 +19,7 @@ const dev = defineConfig({
 const build = defineConfig({
   publicDir: false,
   build: {
+    outDir: "dist", // Set the output directory to "dist"
     minify: false,
     sourcemap: true,
     target: "es2018",
