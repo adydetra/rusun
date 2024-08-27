@@ -17,17 +17,18 @@ const dev = defineConfig({
 });
 
 const build = defineConfig({
-  publicDir: "../public/",
+  publicDir: false,
   build: {
-    outDir: "dist", // Output directory
     minify: false,
     sourcemap: true,
     target: "es2018",
+    lib: {
+      formats: ["cjs", "es"],
+      entry: "src/Ecctrl.tsx",
+      fileName: "[name]",
+    },
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, "example/index.html"),
-        // Add any other entry points here if needed
-      },
+      external: (id) => !id.startsWith(".") && !path.isAbsolute(id),
       output: {
         sourcemapExcludeSources: true,
       },
