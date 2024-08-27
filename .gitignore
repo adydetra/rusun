@@ -1,0 +1,20 @@
+# Node dependencies
+node_modules
+
+# build outputs
+dist
+exampleDist
+
+# Logs
+logs
+*.log
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Others
+.DS_Store
+.vscode
+.idea
