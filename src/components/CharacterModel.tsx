@@ -1,21 +1,21 @@
-import { useAnimations, useGLTF, useTexture, Trail, SpriteAnimator } from '@react-three/drei';
-import { useControls } from 'leva';
-import { Suspense, useEffect, useRef, useMemo, useState } from 'react';
 import * as THREE from 'three';
-import { useGame } from '../src/stores/useGame';
+import { Suspense, useEffect, useRef, useMemo, useState } from 'react';
+import { useAnimations, useGLTF, useTexture, Trail, SpriteAnimator } from '@react-three/drei';
 import { BallCollider, RapierCollider, vec3 } from '@react-three/rapier';
 import { useFrame } from '@react-three/fiber';
+import { useControls } from 'leva';
+import { useGame } from '../stores/useGame';
 import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export default function CharacterModel(props: CharacterModelProps) {
   // Change the character src to yours
   const group = useRef<THREE.Group>();
-  const { nodes, animations } = useGLTF('/Floating_Character.glb') as GLTF & {
+  const { nodes, animations } = useGLTF('/Floating_Character.glb') as unknown as GLTF & {
     nodes: any;
   };
   const { actions } = useAnimations(animations, group);
   // gradientMapTexture for MeshToonMaterial
-  const gradientMapTexture = useTexture('./textures/3.jpg');
+  const gradientMapTexture = useTexture('/textures/3.jpg');
   gradientMapTexture.minFilter = THREE.NearestFilter;
   gradientMapTexture.magFilter = THREE.NearestFilter;
   gradientMapTexture.generateMipmaps = false;
@@ -251,7 +251,7 @@ export default function CharacterModel(props: CharacterModelProps) {
           play={punchEffectProps.play}
           numberOfFrames={7}
           alphaTest={0.01}
-          textureImageURL={'./punchEffect.png'}
+          textureImageURL={'/punchEffect.png'}
         />
       </group>
     </Suspense>
@@ -261,4 +261,4 @@ export default function CharacterModel(props: CharacterModelProps) {
 export type CharacterModelProps = JSX.IntrinsicElements['group'];
 
 // Change the character src to yours
-useGLTF.preload('/Floating Character.glb');
+useGLTF.preload('/Floating_Character.glb');

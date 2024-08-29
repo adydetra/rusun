@@ -1,18 +1,12 @@
-import { Grid, KeyboardControls } from '@react-three/drei';
-import { Perf } from 'r3f-perf';
+import { useEffect, useState } from 'react';
+import { KeyboardControls } from '@react-three/drei';
 import { Physics } from '@react-three/rapier';
-import Ecctrl from '../src/Ecctrl';
+import { useControls } from 'leva';
+import Ecctrl from '../App';
 import Floor from './Floor';
 import Lights from './Lights';
 import Steps from './Steps';
-import Slopes from './Slopes';
-import RoughPlane from './RoughPlane';
-import RigidObjects from './RigidObjects';
-import FloatingPlatform from './FloatingPlatform';
-import DynamicPlatforms from './DynamicPlatforms';
-import { useControls } from 'leva';
 import CharacterModel from './CharacterModel';
-import React, { useEffect, useState } from 'react';
 
 export default function Experience() {
   /**
@@ -86,29 +80,11 @@ export default function Experience() {
             {/* Replace your model here */}
             <CharacterModel />
           </Ecctrl>
+
         </KeyboardControls>
-
-        {/* Rough plan */}
-        {/* <RoughPlane /> */}
-
-        {/* Slopes and stairs */}
-        {/* <Slopes /> */}
-
-        {/* Small steps */}
         <Steps />
-
-        {/* Rigid body objects */}
-        {/* <RigidObjects /> */}
-
-        {/* Floating platform */}
-        {/* <FloatingPlatform /> */}
-
-        {/* Dynamic platforms */}
-        {/* <DynamicPlatforms /> */}
-
-        {/* Floor */}
         <Floor />
-
+        
       </Physics>
     </>
   );

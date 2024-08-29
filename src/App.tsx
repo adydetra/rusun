@@ -1,19 +1,18 @@
+import * as THREE from 'three';
 import { useKeyboardControls } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { quat, RigidBody, CapsuleCollider, useRapier, RapierRigidBody, type RigidBodyProps, CylinderCollider } from '@react-three/rapier';
 import { useEffect, useRef, useMemo, useState, type ReactNode, forwardRef, type ForwardRefRenderFunction, type RefObject } from 'react';
-import * as THREE from 'three';
 import { useControls } from 'leva';
 import { useFollowCam } from './hooks/useFollowCam';
 import { useGame } from './stores/useGame';
 import { useJoystickControls } from './stores/useJoystickControls';
 import type { Collider, RayColliderHit, Vector } from '@dimforge/rapier3d-compat';
-import React from 'react';
 
-export { EcctrlAnimation } from './EcctrlAnimation';
+export { EcctrlAnimation } from './components/UI/EcctrlAnimation';
 export { useFollowCam } from './hooks/useFollowCam';
 export { useGame } from './stores/useGame';
-export { EcctrlJoystick } from '../src/EcctrlJoystick';
+export { EcctrlJoystick } from './components/UI/EcctrlJoystick';
 export { useJoystickControls } from './stores/useJoystickControls';
 
 // Retrieve current moving direction of the character

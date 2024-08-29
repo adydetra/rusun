@@ -2,7 +2,7 @@ import { useThree } from '@react-three/fiber';
 // import { useRapier } from "@react-three/rapier";
 import { useEffect, useMemo } from 'react';
 import * as THREE from 'three';
-import type { camListenerTargetType } from '../Ecctrl';
+import type { camListenerTargetType } from '..';
 
 export const useFollowCam = function (props: UseFollowCamProps) {
   const { scene, camera, gl } = useThree();

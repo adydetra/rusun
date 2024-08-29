@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { RigidBody } from '@react-three/rapier';
 import { Text, Html, useGLTF } from '@react-three/drei';
 import { useClickAway } from '@uidotdev/usehooks';

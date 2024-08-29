@@ -1,12 +1,12 @@
-import './style.css';
+import './style.css'
+
 import ReactDOM from 'react-dom/client';
-import { Canvas } from '@react-three/fiber';
-import Experience from '../example/Experience';
-import { Leva } from 'leva';
-import { EcctrlJoystick } from '../src/EcctrlJoystick';
 import { Suspense, useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
-import React from 'react';
+import { Leva } from 'leva';
+import { EcctrlJoystick } from './components/UI/EcctrlJoystick';
+import Experience from './components/Experience';
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 
@@ -42,7 +42,7 @@ root.render(
     >
       <Suspense fallback={null}>
         <Experience />
-        <Environment files="./textures/modern_bathroom_2k.hdr" background backgroundBlurriness={0.3} />
+        <Environment files="/textures/modern_bathroom_2k.hdr" background backgroundBlurriness={0.3} />
       </Suspense>
     </Canvas>
   </>
